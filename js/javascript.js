@@ -32,17 +32,23 @@ var charmander = {
   var userPokemon = charmander;
   // CPU's Pokemon remains pikachu
   var cpuPokemon = pikachu;
-  
+
   // Prompt the user for their name and update userPokemon accordingly
-  var userName = prompt("Enter your name:");
-  if (userName && userName.trim() !== "") {
-	userPokemon.name = userName.trim();
-  }
-  $("#user-name").text(userPokemon.name);
-  $("#user-lvl").text("lvl " + userPokemon.lvl);
-  $("#cpu-name").text(cpuPokemon.name);
-  $("#cpu-lvl").text("lvl " + cpuPokemon.lvl);
-  
+var userName = prompt("Enter your name:");
+if (userName && userName.trim() !== "") {
+  userPokemon.name = userName.trim();
+}
+$("#user-name").text(userPokemon.name);
+$("#user-lvl").text("lvl " + userPokemon.lvl);
+$("#cpu-name").text(cpuPokemon.name);
+$("#cpu-lvl").text("lvl " + cpuPokemon.lvl);
+
+// Attempt to play the background music once the name is entered
+var bgMusic = document.getElementById("bg-music");
+bgMusic.play().catch(function(error) {
+  console.error("Audio playback failed. This may be due to browser autoplay restrictions.", error);
+});
+
   // Remove the "hide" class so that the image-based buttons are visible.
   // (Ensure that the "move.png" file is in your img folder)
   $("#user-buttons").removeClass("hide");

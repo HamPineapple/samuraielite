@@ -4,112 +4,150 @@ html, body {
   background-color: #f5f5f5;
   width: 100%;
   height: 100%;
-font-family: Roboto;
--webkit-user-select: none;      
--moz-user-select: none;
--ms-user-select: none;
+  font-family: Roboto;
+  -webkit-user-select: none;      
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-#main-container{
+/* Main Container */
+#main-container {
   width: 400px;
   height: 631px;
   border: 6px solid #212121;
+  margin: 0 auto;
 }
 
-#top-screen{
+/* Responsive Styles for Mobile */
+@media only screen and (max-width: 600px) {
+  #main-container {
+    width: 90vw;       /* Use 90% of the viewport width */
+    height: auto;      /* Let the height adjust based on content */
+    max-width: 600px;
+    transform: scale(1.2); /* Optionally scale up */
+  }
+  
+  #chat-text {
+    font-size: 4vw; 
+    top: 250px;
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  img.absolute {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #user-buttons {
+    font-size: 4vw;
+  }
+}
+
+/* Override bullseye for larger screens */
+@media only screen and (min-width: 601px) {
+  .bullseye {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto;
+  }
+}
+
+/* Top & Bottom Screen */
+#top-screen {
   height: 312px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
-#bottom-screen{
-  overflow:hidden;
+#bottom-screen {
+  overflow: hidden;
 }
 
-#move1-text{
-  width:132px;
-  bottom: 196px;
-  left:34px;
-  z-index: 1;
-}
-#move2-text{
-  width:132px;
-  bottom: 196px;
-  right:34px;
-  z-index: 1;
-
-}
-
-#user-name{
-  width: 83px;
-  top:190px;
-  right:58px;
-  z-index:1;
-}
-#user-lvl{
-  top:195px;
-  right:15px;
-  font-size:12px;
-  z-index:1;
-}
-
-#cpu-name{
-  width: 83px;
-  top:15px;
-  left:16px;
-  z-index:1;
-}
-#cpu-lvl{
-  top:19px;
-  left:117px;
-  font-size:12px;
-  z-index:1;
-}
-
-#user-health-bar{
-  width: 100%;
-  height:3px;
-  background-color:#00B200;
-  z-index: 1;
-}
-
-#cpu-health-bar{
-  width: 100%;
-  height:3px;
-  background-color:#00B200;
-  z-index: 1;
-}
+/* Chat Text */
 #chat-text {
   width: 360px;       /* slightly smaller than 400px for padding */
-  top: 240px;         /* lower this value to move the text up if needed */
-  left: 20px;         /* centers the 360px container within the 400px window */
-  text-align: center; /* centers the text inside the container */
-  z-index: 2;         /* ensures it appears above the chat window image */
-  font-size: 16px;    /* adjust font size if the text is too long */
+  top: 240px;         /* adjust to position within the chat window */
+  left: 20px;         
+  text-align: center;
+  z-index: 2;         
+  font-size: 16px;
   line-height: 1.2;
 }
-.user-attack-img{
-  width:100px;
-  top:95px;
-  right:57px;
-  z-index:1;
-}
-.cpu-attack-img{
-  width:100px;
-  top:185px;
-  left:60px;
-  z-index:1;
-}
-.img-spacing{
-  float: left;
-}
-/*---- Theme Classes ----*/
 
+/* Element Positioning */
+#move1-text {
+  width: 132px;
+  bottom: 196px;
+  left: 34px;
+  z-index: 1;
+}
+
+#move2-text {
+  width: 132px;
+  bottom: 196px;
+  right: 34px;
+  z-index: 1;
+}
+
+#user-name {
+  width: 83px;
+  top: 190px;
+  right: 58px;
+  z-index: 1;
+}
+
+#user-lvl {
+  top: 195px;
+  right: 15px;
+  font-size: 12px;
+  z-index: 1;
+}
+
+#cpu-name {
+  width: 83px;
+  top: 15px;
+  left: 16px;
+  z-index: 1;
+}
+
+#cpu-lvl {
+  top: 19px;
+  left: 117px;
+  font-size: 12px;
+  z-index: 1;
+}
+
+#user-health-bar, #cpu-health-bar {
+  width: 100%;
+  height: 3px;
+  background-color: #00B200;
+  z-index: 1;
+}
+
+/* Attack image positioning classes */
+.user-attack-img {
+  width: 100px;
+  top: 95px;
+  right: 57px;
+  z-index: 1;
+}
+
+.cpu-attack-img {
+  width: 100px;
+  top: 185px;
+  left: 60px;
+  z-index: 1;
+}
+
+/* Utility classes */
 .absolute {
   position: absolute !important;
 }
 
 .bullseye {
--webkit-filter: blur(0);
+  -webkit-filter: blur(0);
   position: relative !important;
   top: 50% !important;
   left: 50% !important;
