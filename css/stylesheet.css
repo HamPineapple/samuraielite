@@ -10,14 +10,13 @@ font-family: Roboto;
 -webkit-user-select: none;      
 -moz-user-select: none;
 -ms-user-select: none;
+  /* Use Flexbox to center the main container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Wrapper for Scaling */
-#wrapper {
-  width: 526px;   /* 400 * 1.316 ≈ 526 */
-  height: 831px;  /* desired final height */
-  margin: 20px auto;
-}
+
 
 #main-container{
   width: 400px;
@@ -89,7 +88,7 @@ font-family: Roboto;
 }
 #chat-text {
   width: 360px;       /* slightly smaller than 400px for padding */
-  top: 240px;         /* lower this value to move the text up if needed */
+  top: 260px;         /* lower this value to move the text up if needed */
   left: 20px;         /* centers the 360px container within the 400px window */
   text-align: center; /* centers the text inside the container */
   z-index: 2;         /* ensures it appears above the chat window image */
