@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// Set the default chat text
-	$("#chat-text").text("Will you be in Aberdeen on the 21st?");
+	$("#chat-text").text("Are you coming out in Aberdeen on the 21st?");
 
 
 // Define the two Pokemon objects
@@ -71,7 +71,7 @@ function handleYes() {
 	  .addClass("cpu-attack-img")
 	  .fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
 	
-	$("#chat-text").text("YOU'VE THROWN A BRICK!");
+	$("#chat-text").text("Casting Fireball");
 	
 	setTimeout(function() {
 	  $("#chat-text").text("CRITICAL HIT!!!! PIKACHU DIED");
@@ -84,7 +84,7 @@ function handleYes() {
 	  $("#attack-img").addClass("hide").removeClass("cpu-attack-img");
 	  
 	  setTimeout(function() {
-		$("#chat-text").text("CONGRATULATIONS!!! YOU'VE EVOLVED INTO MEGA TAISH!! See you then!");
+		$("#chat-text").text("CONGRATULATIONS!!! You've evolved into Mega Taish! See you then!!!");
 		// Hide the buttons so they can't be clicked again
 		$("#user-buttons").addClass("hide");
 	  }, 1500);
