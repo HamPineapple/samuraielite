@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// Set the default chat text
-	$("#chat-text").text("Are you coming out in Aberdeen on the 21st?");
+	$("#chat-text").text("Will you be out in Aberdeen on the 21st?");
 
 
 // Define the two Pokemon objects
