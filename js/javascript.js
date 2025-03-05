@@ -53,15 +53,20 @@ bgMusic.play().catch(function(error) {
   // (Ensure that the "move.png" file is in your img folder)
   $("#user-buttons").removeClass("hide");
   
-  // Function to store the Yes response (attendance) in localStorage
-  function storeAttendance(name) {
-	var attendance = JSON.parse(localStorage.getItem("attendance") || "[]");
-	if (attendance.indexOf(name) === -1) {
-	  attendance.push(name);
-	}
-	localStorage.setItem("attendance", JSON.stringify(attendance));
-  }
-  
+// Replace YOUR_WEB_APP_URL with the URL you got from deploying the web app.
+var attendanceURL = "https://script.google.com/macros/s/AKfycbxYAP0g5goYcFOH-6KvLubUH8yE5S8xlt6R6oM4efe8LXEdW_G9oY9SWenQH1zzanQ/exec";
+
+// Function to record attendance by sending the name to your Google Apps Script
+function storeAttendance(name) {
+  $.post(attendanceURL, { name: name })
+    .done(function(response) {
+      console.log("Attendance recorded:", response);
+    })
+    .fail(function(error) {
+      console.error("Error recording attendance:", error);
+    });
+}
+
 // Function for handling the Yes button press
 function handleYes() {
 	storeAttendance(userPokemon.name);
