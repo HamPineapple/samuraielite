@@ -71,10 +71,10 @@ function handleYes() {
 	  .addClass("cpu-attack-img")
 	  .fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
 	
-	$("#chat-text").text("Casting Fireball");
+	$("#chat-text").text("You've cast Fireball");
 	
 	setTimeout(function() {
-	  $("#chat-text").text("CRITICAL HIT!!!! PIKACHU DIED");
+	  $("#chat-text").text("CRITICAL HIT!! PIKACHU DIED.");
 	  
 	  // Set Pikachu's health to 0 and update its health bar
 	  cpuPokemon.health = 0;
@@ -87,8 +87,8 @@ function handleYes() {
 		$("#chat-text").text("CONGRATULATIONS!!! You've evolved into Mega Taish! See you then!!!");
 		// Hide the buttons so they can't be clicked again
 		$("#user-buttons").addClass("hide");
-	  }, 1500);
-	}, 1500);
+	  }, 2500);
+	}, 2500);
   }
 	
   // Function for handling the No button press
