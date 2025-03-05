@@ -6,9 +6,10 @@ html, body {
   font-family: Roboto, sans-serif;
   width: 100%;
   height: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+font-family: Roboto;
+-webkit-user-select: none;      
+-moz-user-select: none;
+-ms-user-select: none;
 }
 
 /* Wrapper for Scaling */
@@ -18,135 +19,124 @@ html, body {
   margin: 20px auto;
 }
 
-/* Main Container */
-#main-container {
+#main-container{
   width: 400px;
   height: 631px;
   border: 6px solid #212121;
-  position: relative;
-  margin: 0 auto;
-  transform: scale(1.316);
-  transform-origin: top left;
 }
 
-/* Top Screen */
-#top-screen {
+#top-screen{
   height: 312px;
-  position: relative;
-  overflow: hidden;
+  overflow:hidden;
 }
 
-/* Bottom Screen */
-#bottom-screen {
-  position: relative;
-  overflow: hidden;
+#bottom-screen{
+  overflow:hidden;
 }
 
-/* Chat Text */
+#move1-text{
+  width:132px;
+  bottom: 196px;
+  left:34px;
+  z-index: 1;
+}
+#move2-text{
+  width:132px;
+  bottom: 196px;
+  right:34px;
+  z-index: 1;
+
+}
+
+#user-name{
+  width: 83px;
+  top:190px;
+  right:58px;
+  z-index:1;
+}
+#user-lvl{
+  top:195px;
+  right:15px;
+  font-size:12px;
+  z-index:1;
+}
+
+#cpu-name{
+  width: 83px;
+  top:15px;
+  left:16px;
+  z-index:1;
+}
+#cpu-lvl{
+  top:19px;
+  left:117px;
+  font-size:12px;
+  z-index:1;
+}
+
+#user-health-bar{
+  width: 100%;
+  height:3px;
+  background-color:#00B200;
+  z-index: 1;
+}
+
+#cpu-health-bar{
+  width: 100%;
+  height:3px;
+  background-color:#00B200;
+  z-index: 1;
+}
 #chat-text {
-  position: absolute;
-  width: 360px;       /* Slightly smaller than 400px for padding */
-  top: 240px;         /* Adjust as needed to fit inside the chat window */
-  left: 20px;
-  text-align: center;
-  z-index: 2;
-  font-size: 16px;
+  width: 360px;       /* slightly smaller than 400px for padding */
+  top: 240px;         /* lower this value to move the text up if needed */
+  left: 20px;         /* centers the 360px container within the 400px window */
+  text-align: center; /* centers the text inside the container */
+  z-index: 2;         /* ensures it appears above the chat window image */
+  font-size: 16px;    /* adjust font size if the text is too long */
   line-height: 1.2;
 }
+.user-attack-img{
+  width:100px;
+  top:95px;
+  right:57px;
+  z-index:1;
+}
+.cpu-attack-img{
+  width:100px;
+  top:185px;
+  left:60px;
+  z-index:1;
+}
+.img-spacing{
+  float: left;
+}
+/*---- Theme Classes ----*/
 
-/* User and CPU Info */
-#user-name {
-  position: absolute;
-  width: 83px;
-  top: 190px;
-  right: 58px;
-  z-index: 1;
-}
-#user-lvl {
-  position: absolute;
-  top: 195px;
-  right: 15px;
-  font-size: 12px;
-  z-index: 1;
-}
-#cpu-name {
-  position: absolute;
-  width: 83px;
-  top: 15px;
-  left: 16px;
-  z-index: 1;
-}
-#cpu-lvl {
-  position: absolute;
-  top: 19px;
-  left: 117px;
-  font-size: 12px;
-  z-index: 1;
-}
-
-/* Health Bars */
-#user-health-bar, #cpu-health-bar {
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: #00B200;
-  z-index: 1;
-}
-
-/* User Buttons Container */
-#user-buttons {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 10px 0;
-}
-
-/* Button Containers: use inline-block to display side by side */
-#move1-button, #move2-button {
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  margin: 0 10px;
-}
-
-/* Button Text (Yes/No) */
-#move1-text, #move2-text {
-  position: absolute;
-  width: 100%;
-  bottom: 80px; /* Adjust to place text above the image */
-  text-align: center;
-  z-index: 2;
-  font-size: 18px;
-}
-
-/* Move.png image for buttons */
-#move1-button img, #move2-button img {
-  display: block;
-  height: 75px;
-  width: auto;
-}
-
-/* Attack Image Classes */
-.cpu-attack-img {
-  position: absolute;
-  width: 100px;
-  top: 185px;
-  left: 60px;
-  z-index: 1;
-}
-.user-attack-img {
-  position: absolute;
-  width: 100px;
-  top: 95px;
-  right: 57px;
-  z-index: 1;
-}
-
-/* Utility Classes */
 .absolute {
-  position: absolute;
+  position: absolute !important;
+}
+
+.bullseye {
+-webkit-filter: blur(0);
+  position: relative !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate3d(-50%, -50%, 0) !important;
+}
+
+.box-shadow-1 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37) !important;
+}
+
+.border-radius {
+  -webkit-border-radius: 2px !important;
+  -moz-border-radius: 2px !important;
+  border-radius: 2px !important;
+}
+
+.pointer {
+  cursor: pointer;
 }
 .hide {
   display: none !important;
